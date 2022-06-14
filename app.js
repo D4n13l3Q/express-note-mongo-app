@@ -2,6 +2,9 @@ import express from 'express';
 import 'dotenv/config';
 import logMiddleware from './middlewares/log.middleware.js';
 import admins from './routes/admins.route.js';
+import atlasConnection from './database/mongo-connection.js';
+
+await atlasConnection();
 
 const port = process.env.PORT;
 const app = express();
