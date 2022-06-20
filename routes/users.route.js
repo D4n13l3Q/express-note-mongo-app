@@ -7,11 +7,11 @@ const usersRoute = express.Router();
 
 usersRoute.post(
   '/api/register',
-  
+
   body('username').isLength({ min: 5, max: 10 }),
   body('email').isEmail(),
   body('password').isLength({ min: 8, max: 50 }),
-  
+
   async function (request, response) {
     const errors = validationResult(request);
     if (!errors.isEmpty()) {

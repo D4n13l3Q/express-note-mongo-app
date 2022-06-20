@@ -17,8 +17,6 @@ import notesPut from './routes/notes-put.route.js';
 // Database connection
 import atlasConnection from './database/mongo-connection.js';
 
-
-
 // SETUP
 
 // Parse env
@@ -30,8 +28,6 @@ await atlasConnection();
 // Create Express server
 const app = express();
 
-
-
 // MIDDLEWARE
 
 // Logs middleware
@@ -39,8 +35,6 @@ app.use(logMiddleware);
 
 // Json-parser middleware
 app.use(express.json());
-
-
 
 // ROUTES
 
@@ -66,8 +60,6 @@ app.use(
     });
   },
 );
-
-
 
 // DEBUG
 if (process.env.NODE_ENV !== 'test') {

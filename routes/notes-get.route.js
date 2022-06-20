@@ -2,11 +2,7 @@ import express from 'express';
 
 import Note from '../models/note.js';
 
-
-
 const notesRoute = express.Router();
-
-
 
 notesRoute.get('/', async function (request, reply) {
   try {
@@ -25,8 +21,6 @@ notesRoute.get('/', async function (request, reply) {
   }
 });
 
-
-
 notesRoute.get('/:id', async function (request, response) {
   try {
     const notes = await Note.findById(request.params.id);
@@ -42,7 +36,5 @@ notesRoute.get('/:id', async function (request, response) {
     });
   }
 });
-
-
 
 export default notesRoute;
